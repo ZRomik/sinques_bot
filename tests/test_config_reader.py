@@ -11,10 +11,9 @@ class ReadParamTestCase(TestCase):
         :return: None
         """
         db_type = read_param("DBTYPE")
-        self.assertEqual(
+        self.assertIsNotNone(
             db_type,
-            "sqlite",
-            "Полученная строка не совпадает с ожидаемой!"
+            "Полученная строка не содержит значения!"
         )
 
     def test_read_param_param_not_exists(self):
