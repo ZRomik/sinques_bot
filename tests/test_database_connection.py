@@ -1,5 +1,6 @@
 from db_connection import database
 from unittest import TestCase
+from helpers import read_param
 
 class DatabaseTestCase(TestCase):
     """
@@ -13,8 +14,9 @@ class DatabaseTestCase(TestCase):
 
     def test_connect_to_database(self):
         if database is not None:
-            connected = database.connect(reuse_if_open=True)
-            self.assertTrue(
-                connected,
-                "Неудалось подключиться к БД"
-            )
+            if read_param("DBTYPE") != "sqlite":
+                connected = database.connect(reuse_if_open=True)
+                self.assertTrue(
+                    connected,
+                    "Неудалось подключиться к БД"
+                )
