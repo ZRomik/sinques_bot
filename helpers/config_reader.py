@@ -1,9 +1,9 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
 
 def read_param(key: str):
+    load_dotenv()
     """
     Функция для чтения параметров конфигурации.
     Считывает значение указанного параметра файла конфигурации и возвращает его.
