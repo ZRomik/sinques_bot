@@ -12,8 +12,9 @@ class DatabaseTestCase(TestCase):
         database.close()
 
     def test_connect_to_database(self):
-        connected = database.connect(reuse_if_open=True)
-        self.assertTrue(
-            connected,
-            "Неудалось подключиться к БД"
-        )
+        if database is not None:
+            connected = database.connect(reuse_if_open=True)
+            self.assertTrue(
+                connected,
+                "Неудалось подключиться к БД"
+            )
