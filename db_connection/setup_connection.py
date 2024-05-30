@@ -50,3 +50,9 @@ if db_type == POSTGRES:
         host=host
     )
     database.connect()
+
+elif db_type == MYSQL:
+    pass
+
+else:
+    pass
