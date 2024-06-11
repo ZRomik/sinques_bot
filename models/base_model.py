@@ -1,6 +1,8 @@
 from peewee import *
 from db_connection import database
 
+MAX_FIELD_SIZE = 150
+
 class BaseModel(Model):
     """
     Общая модель данных.
