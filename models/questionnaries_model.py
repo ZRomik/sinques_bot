@@ -1,4 +1,4 @@
-from .base_model import BaseModel
+from .base_model import *
 from peewee import *
 from datetime import datetime
 
@@ -7,11 +7,11 @@ class QuestionnariesModel(BaseModel):
     Модель названий анкет.
     Описывает конкретную анкету в списке анкет.
     """
-    name = CharField(max_length=150, index=True)
-    greetings = CharField(max_length=150, null=True)
-    farewell = CharField(max_length=150, null=True)
+    name = CharField(max_length=MAX_FIELD_SIZE, index=True)
+    greetings = CharField(max_length=MAX_FIELD_SIZE, null=True)
+    farewell = CharField(max_length=MAX_FIELD_SIZE, null=True)
     created_at = TimestampField(default=datetime.now)
-    creator = CharField(max_length=150, index=True)
+    creator = CharField(max_length=MAX_FIELD_SIZE, index=True)
 
     class Meta:
         db_table = "questionnaries"
