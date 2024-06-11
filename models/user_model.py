@@ -1,4 +1,4 @@
-from .base_model import BaseModel
+from .base_model import *
 from peewee import *
 
 class UserModel(BaseModel):
@@ -7,7 +7,7 @@ class UserModel(BaseModel):
     Описывает идентификатор и имя пользователя (ник) в телеграм
     """
     tg_id = BigIntegerField(unique=True)
-    name = CharField(max_length=150)
+    name = CharField(max_length=MAX_FIELD_SIZE)
 
     class Meta:
         db_table = "users"
