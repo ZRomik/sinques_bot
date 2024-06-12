@@ -10,7 +10,7 @@ class AnswersModel(BaseModel):
     Описывает текст ответа на вопрос анкеты.
     """
     text = CharField(max_length=500)
-    question = ForeignKeyField(QuestionsModel, unique=True, backref="answers")
+    question = ForeignKeyField(QuestionsModel, unique=True, backref="answers", on_delete="CASCADE")
     user = ForeignKeyField(UserModel, unique=True, backref="answers")
     answer_date = TimestampField(default=datetime.now)
 
