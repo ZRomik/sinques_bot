@@ -12,6 +12,7 @@ class QuestionnariesModel(BaseModel):
     farewell = CharField(max_length=MAX_FIELD_SIZE, null=True)
     created_at = TimestampField(default=datetime.now)
     creator = CharField(max_length=MAX_FIELD_SIZE, index=True)
+    ready = BooleanField(default=False)
 
     class Meta:
         db_table = "questionnaries"
