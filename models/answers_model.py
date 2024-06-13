@@ -12,7 +12,7 @@ class AnswersModel(BaseModel):
     text = CharField(max_length=500)
     question = ForeignKeyField(QuestionsModel, unique=True, backref="answers", on_delete="CASCADE")
     user = ForeignKeyField(UserModel, unique=True, backref="answers")
-    answer_date = TimestampField(default=datetime.now)
+    answered = TimestampField(default=datetime.now)
 
     class Meta:
         db_table = "answers"
