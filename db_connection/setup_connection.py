@@ -1,6 +1,6 @@
 from peewee import *
 from exceptions import CONNECTION_ERROR, ImproperlyConfigured
-from helpers import read_param
+from setup import read_param
 import logging
 from .db_types import *
 

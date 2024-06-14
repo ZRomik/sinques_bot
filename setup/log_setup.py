@@ -1,5 +1,5 @@
 import logging
-from helpers import read_param
+from .config_reader import read_param
 
 LOG_FORMAT = "%(asctime)s [%(levelname)s]: %(message)s"
 DATE_FORMAT = "%d.%m.%Y, %H:%M:%S"

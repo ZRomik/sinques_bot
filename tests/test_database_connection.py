@@ -1,7 +1,7 @@
 from playhouse.reflection import generate_models
 from db_connection import database
 from unittest import TestCase
-from helpers import read_param
+from setup import read_param
 
 class DatabaseTestCase(TestCase):
     """
