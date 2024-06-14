@@ -1,5 +1,5 @@
 from aiogram import Bot, Dispatcher
-from helpers import read_param
+from setup import read_param
 from exceptions import *
 import logging
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
