@@ -12,6 +12,10 @@ class SurveyModel(BaseModel):
     """Создатель анкеты"""
     created = TimestampField(default=datetime.now)
     """Дата создания анкеты"""
+    greetings = TextField(null=True)
+    """Приветственное сообщение"""
+    farewell = TextField(null=True)
+    """Прощальное сообщение"""
 
     class Meta:
         db_table = "surveys"
