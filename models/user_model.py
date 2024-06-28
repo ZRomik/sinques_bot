@@ -9,3 +9,6 @@ class UserModel(BaseModel):
     """идентификатор в телеграм"""
     name = CharField(max_length=150)
     """имя в телеграм"""
+
+    class Meta:
+        db_table = "users"
