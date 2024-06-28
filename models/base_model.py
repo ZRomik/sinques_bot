@@ -1,4 +1,5 @@
 from peewee import *
+from db_connection import database
 
 class BaseModel(Model):
     """
@@ -6,3 +7,6 @@ class BaseModel(Model):
     """
     id = BigAutoField(primary_key=True)
     """Идентификатор записи"""
+
+    class Meta:
+        database = database
