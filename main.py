@@ -1,7 +1,6 @@
 import logging
 from aiogram.utils import executor
 from setup import *
-from helpers import read_param
 from os import path
 
 logger = logging.getLogger(__name__)
