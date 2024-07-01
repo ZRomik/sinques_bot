@@ -12,3 +12,6 @@ class OpenAnswerModel(BaseModel):
     text = TextField()
     user = ForeignKeyField(UserModel, on_delete="CASCADE", backref="answers")
     answered = DateField(default=datetime.now)
+
+    class Meta:
+        db_table = "o_answers"
