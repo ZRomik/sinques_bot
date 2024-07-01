@@ -10,7 +10,7 @@ class DatabaseTestCase(TestCase):
     def setUp(self) -> None:
         super().setUp()
         self.tables = [
-            BaseModel
+            UserModel,
         ]
 
     def tearDown(self) -> None:
