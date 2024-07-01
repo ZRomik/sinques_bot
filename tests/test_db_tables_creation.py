@@ -11,11 +11,15 @@ class DatabaseTestCase(TestCase):
         super().setUp()
         self.tables = [
             UserModel,
+            SurveyModel,
         ]
 
     def tearDown(self) -> None:
         database.drop_tables(self.tables)
 
     def test_create_tables(self):
+        """
+        Тестирование создания моделей.
+        """
         for table in self.tables:
             database.create_tables([table])

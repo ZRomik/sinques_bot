@@ -43,3 +43,15 @@ class UserModelTestCase(TestCase):
             msg="Исключение не возбуждено"
         ):
             UserModel.create(**self.incorrect_data)
+
+class SurveyModelTestCase(TestCase):
+    """
+    Тестирование модели SurveyModel
+    """
+    def setUp(self) -> None:
+        super().setUp()
+        database.create_tables([SurveyModel])
+
+    def tearDown(self) -> None:
+        SurveyModel.delete().execute()
+        database.drop_tables([SurveyModel], recursive=True)
